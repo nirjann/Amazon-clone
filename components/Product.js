@@ -8,6 +8,7 @@ function Product(props) {
     props.product;
   const [ratings] = useState(Math.ceil(rating.rate));
   const [hasPrime] = useState(Math.random() > 0.5);
+  let dummy = 0;
   return (
     <div className="flex flex-col m-5 p-10 bg-white z-30 shadow-sm relative">
       <p className="absolute top-2 right-2 text-sm italic text-gray-500">
@@ -19,7 +20,7 @@ function Product(props) {
         {Array(ratings)
           .fill()
           .map((_) => (
-            <StarIcon className="h-4 text-yellow-500" />
+            <StarIcon key={dummy++} className="h-4 text-yellow-500" />
           ))}
       </div>
 
